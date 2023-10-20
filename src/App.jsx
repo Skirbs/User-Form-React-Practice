@@ -1,7 +1,10 @@
-import {useState} from "react";
-
+import UserForm from "./components/userForm/UserForm";
 function App() {
-  return <></>;
+  return (
+    <>
+      <UserForm></UserForm>
+    </>
+  );
 }
 
 export default App;
