@@ -1,10 +1,13 @@
 import UserForm from "./components/userForm/UserForm";
 import UserList from "./components/UserLIst/UserList";
+import ErrorPopup from "./components/ErrorPopup/ErrorPopup";
+
 function App() {
   return (
     <>
-      <UserForm></UserForm>
-      <UserList></UserList>
+      <UserForm />
+      <UserList />
+      <ErrorPopup />
     </>
   );
 }
