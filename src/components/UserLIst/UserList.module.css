@@ -1,6 +1,7 @@
 .user-list {
   padding: 0;
   margin-top: 16px;
+  gap: 10px;
 }
 
 .user-list li {

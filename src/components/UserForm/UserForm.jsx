@@ -1,10 +1,24 @@
 import style from "./UserForm.module.css";
 import Card from "../cards/card";
 
-const UserForm = () => {
+const UserForm = (props) => {
+  const submitHandler = (e) => {
+    e.preventDefault();
+
+    const nameValue = document.querySelector("#name").value;
+    const ageValue = document.querySelector("#age").value.toString();
+
+    const formValues = {name: nameValue, age: ageValue, key: Math.random()};
+
+    props.onSubmitHandler(formValues);
+  };
+
   return (
     <>
-      <form>
+      <form
+        onSubmit={(e) => {
+          submitHandler(e);
+        }}>
         <Card className={`${style["form-card"]} flex-column`}>
           <p>User Info Form</p>
 

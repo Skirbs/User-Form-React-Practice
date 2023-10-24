@@ -1,12 +1,12 @@
 import Card from "../cards/card";
 import style from "./UserList.module.css";
 
-const UserList = () => {
+const UserList = (props) => {
   return (
     <li>
       <Card className={`flex justify-between`}>
-        <p>Name</p>
-        <p>100</p>
+        <p>{props.userData.name}</p>
+        <p>Age: {props.userData.age}</p>
       </Card>
     </li>
   );
