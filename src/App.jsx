@@ -5,11 +5,18 @@ import {useState} from "react";
 
 function App() {
   const [userData, setUserData] = useState([]);
+  const [formError, setFormError] = useState(false);
+
   const formSubmitHandler = (data) => {
     setUserData((prev) => {
       return [...prev, data];
     });
   };
+
+  const setFormErrorHandler = (isOpen) => {
+    setFormError(isOpen);
+  };
+
   return (
     <>
       <UserForm
@@ -18,7 +25,12 @@ function App() {
         }}
       />
       <UserList userData={userData} />
-      <ErrorPopup />
+      <ErrorPopup
+        formError={formError}
+        setFormErrorHandler={(isOpen) => {
+          setFormErrorHandler(isOpen);
+        }}
+      />
     </>
   );
 }
