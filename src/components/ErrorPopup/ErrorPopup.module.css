@@ -29,6 +29,7 @@
 
 .main p:last-of-type /* @media */ {
   max-width: 300px;
+  text-align: center;
 }
 
 .main button {
