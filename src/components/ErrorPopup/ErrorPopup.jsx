@@ -13,14 +13,14 @@ const ErrorPopup = (props) => {
   return (
     <div
       className={`${style["background"]} ${
-        !props.formError ? "hidden" : ""
+        !props.formError.isError ? "hidden" : ""
       } flex justify-center align-items-center`}
       onMouseDown={(e) => {
         backgroundMouseHandler(e);
       }}>
       <Card className={`${style["main"]} flex-column align-items-center`}>
         <p>Invalid Input</p>
-        <p>Lorem ipsum dolor sit amet. </p>
+        <p>{props.formError.message} </p>
         <button onMouseDown={closeErrorPopup}>Close</button>
       </Card>
     </div>

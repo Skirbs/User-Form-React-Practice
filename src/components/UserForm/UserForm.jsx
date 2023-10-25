@@ -1,5 +1,5 @@
 import style from "./UserForm.module.css";
-import Card from "../cards/card";
+import Card from "../Cards/Card";
 
 const UserForm = (props) => {
   const submitHandler = (e) => {
@@ -7,6 +7,31 @@ const UserForm = (props) => {
 
     const nameValue = document.querySelector("#name").value;
     const ageValue = document.querySelector("#age").value.toString();
+
+    if (!nameValue || !ageValue) {
+      props.hasErrorHandler("One or more inputs are empty");
+      return;
+    }
+
+    if (nameValue.length > 32) {
+      props.hasErrorHandler("Name is too long (Shouldnt exceed 32 characters)");
+      return;
+    }
+
+    if (/\d/.test(nameValue)) {
+      props.hasErrorHandler("Name shouldn't contain numbers");
+      return;
+    }
+
+    if (ageValue < 0) {
+      props.hasErrorHandler("Age is lower than 0");
+      return;
+    }
+
+    if (ageValue > 150) {
+      props.hasErrorHandler("Age is higher than 150");
+      return;
+    }
 
     const formValues = {name: nameValue, age: ageValue, key: Math.random()};
 
