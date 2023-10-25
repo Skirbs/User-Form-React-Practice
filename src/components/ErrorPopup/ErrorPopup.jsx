@@ -1,4 +1,4 @@
-import Card from "../cards/card";
+import Card from "../Cards/Card";
 import style from "./ErrorPopup.module.css";
 
 const ErrorPopup = (props) => {
