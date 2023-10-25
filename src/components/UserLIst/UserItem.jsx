@@ -1,4 +1,4 @@
-import Card from "../cards/card";
+import Card from "../Cards/Card";
 import style from "./UserList.module.css";
 
 const UserList = (props) => {
